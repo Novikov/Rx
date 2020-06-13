@@ -12,7 +12,48 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin File" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectId" id="1d88hMy4ZtZUbaYi2xcDdmx8wGa" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ProgramKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="RxCore.main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="ProgramKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.ProgramKt" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="b06fae24-30f9-4742-a405-281fcbed95c5" name="Default Changelist" comment="" />
@@ -22,5 +63,31 @@
       <updated>1591795477373</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="443" y="109" width="1024" height="852" key="#Project_Structure" timestamp="1591795494649">
+      <screen x="0" y="27" width="1920" height="1009" />
+    </state>
+    <state x="443" y="109" width="1024" height="852" key="#Project_Structure/0.27.1920.1009@0.27.1920.1009" timestamp="1591795494649" />
+    <state x="574" y="333" width="761" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591795520309">
+      <screen x="0" y="27" width="1920" height="1009" />
+    </state>
+    <state x="574" y="333" width="761" height="403" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.1009@0.27.1920.1009" timestamp="1591795520309" />
+    <state width="1874" height="261" key="GridCell.Tab.0.bottom" timestamp="1592073456276">
+      <screen x="0" y="27" width="1920" height="1009" />
+    </state>
+    <state width="1874" height="261" key="GridCell.Tab.0.bottom/0.27.1920.1009@0.27.1920.1009" timestamp="1592073456276" />
+    <state width="1874" height="261" key="GridCell.Tab.0.center" timestamp="1592073456276">
+      <screen x="0" y="27" width="1920" height="1009" />
+    </state>
+    <state width="1874" height="261" key="GridCell.Tab.0.center/0.27.1920.1009@0.27.1920.1009" timestamp="1592073456276" />
+    <state width="1874" height="261" key="GridCell.Tab.0.left" timestamp="1592073456276">
+      <screen x="0" y="27" width="1920" height="1009" />
+    </state>
+    <state width="1874" height="261" key="GridCell.Tab.0.left/0.27.1920.1009@0.27.1920.1009" timestamp="1592073456276" />
+    <state width="1874" height="261" key="GridCell.Tab.0.right" timestamp="1592073456276">
+      <screen x="0" y="27" width="1920" height="1009" />
+    </state>
+    <state width="1874" height="261" key="GridCell.Tab.0.right/0.27.1920.1009@0.27.1920.1009" timestamp="1592073456276" />
   </component>
 </project>
