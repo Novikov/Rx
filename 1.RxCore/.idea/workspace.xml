@@ -12,6 +12,43 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="RxCore" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="RxCore" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="RxCore" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="RxCore" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build setup" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -25,16 +62,47 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/Data/Education/1.IT/Android/Rx/03-subjects/challenge/end" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/kotlin/Chapter3" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/kotlin/Chapter2" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Kotlin.ProgramKt (1)">
+    <configuration name="ChallengeKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="RxCore.main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Chapter2.ChallengeKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProgramKt (1)" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="RxCore.main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Chapter3.ProgramKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProgramKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <module name="RxCore.main" />
       <option name="VM_PARAMETERS" />
@@ -42,7 +110,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="ProgramKt" />
+      <option name="MAIN_CLASS_NAME" value="Chapter2.ProgramKt" />
       <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -50,6 +118,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.ProgramKt (1)" />
+        <item itemvalue="Kotlin.ChallengeKt" />
         <item itemvalue="Kotlin.ProgramKt" />
       </list>
     </recent_temporary>
@@ -73,21 +143,25 @@
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
     <state x="574" y="333" width="761" height="403" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.1009@0.27.1920.1009" timestamp="1591795520309" />
-    <state width="1874" height="261" key="GridCell.Tab.0.bottom" timestamp="1592073456276">
+    <state x="743" y="289" width="424" height="491" key="FileChooserDialogImpl" timestamp="1592214852664">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state width="1874" height="261" key="GridCell.Tab.0.bottom/0.27.1920.1009@0.27.1920.1009" timestamp="1592073456276" />
-    <state width="1874" height="261" key="GridCell.Tab.0.center" timestamp="1592073456276">
+    <state x="743" y="289" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1009@0.27.1920.1009" timestamp="1592214852664" />
+    <state width="1874" height="261" key="GridCell.Tab.0.bottom" timestamp="1592214529680">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state width="1874" height="261" key="GridCell.Tab.0.center/0.27.1920.1009@0.27.1920.1009" timestamp="1592073456276" />
-    <state width="1874" height="261" key="GridCell.Tab.0.left" timestamp="1592073456276">
+    <state width="1874" height="261" key="GridCell.Tab.0.bottom/0.27.1920.1009@0.27.1920.1009" timestamp="1592214529680" />
+    <state width="1874" height="261" key="GridCell.Tab.0.center" timestamp="1592214529679">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state width="1874" height="261" key="GridCell.Tab.0.left/0.27.1920.1009@0.27.1920.1009" timestamp="1592073456276" />
-    <state width="1874" height="261" key="GridCell.Tab.0.right" timestamp="1592073456276">
+    <state width="1874" height="261" key="GridCell.Tab.0.center/0.27.1920.1009@0.27.1920.1009" timestamp="1592214529679" />
+    <state width="1874" height="261" key="GridCell.Tab.0.left" timestamp="1592214529679">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state width="1874" height="261" key="GridCell.Tab.0.right/0.27.1920.1009@0.27.1920.1009" timestamp="1592073456276" />
+    <state width="1874" height="261" key="GridCell.Tab.0.left/0.27.1920.1009@0.27.1920.1009" timestamp="1592214529679" />
+    <state width="1874" height="261" key="GridCell.Tab.0.right" timestamp="1592214529679">
+      <screen x="0" y="27" width="1920" height="1009" />
+    </state>
+    <state width="1874" height="261" key="GridCell.Tab.0.right/0.27.1920.1009@0.27.1920.1009" timestamp="1592214529679" />
   </component>
 </project>
