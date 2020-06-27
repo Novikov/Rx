@@ -30,9 +30,16 @@
 
 package com.raywenderlich.android.combinestagram
 
+import android.graphics.BitmapFactory
+import android.graphics.drawable.BitmapDrawable
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.rxkotlin.subscribeBy
+import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -59,17 +66,66 @@ class MainActivity : AppCompatActivity() {
     saveButton.setOnClickListener {
       actionSave()
     }
+
+    //Слушатель отслеживающий изменения в LiveData. Изменения UI выполнятся только тогда, когда изменятся данные внутри LiveData
+    viewModel.getSelectedPhotos().observe(this, Observer { photos ->
+      photos?.let {
+        if (photos.isNotEmpty()) {
+          val bitmaps = photos.map {
+            BitmapFactory.decodeResource(resources, it.drawable)
+          }
+          val newBitmap = combineImages(bitmaps)
+          collageImage.setImageDrawable(BitmapDrawable(resources, newBitmap))
+        } else {
+          collageImage.setImageResource(android.R.color.transparent)
+        }
+        updateUi(photos)
+      }
+    })
+  }
+
+  //Функция обновления UI, а иенно блокировки кнопок.
+  private fun updateUi(photos: List<Photo>) {
+    saveButton.isEnabled = photos.isNotEmpty() && (photos.size % 2 == 0)
+    clearButton.isEnabled = photos.isNotEmpty()
+    addButton.isEnabled = photos.size < 6
+    title = if (photos.isNotEmpty()) {
+      resources.getQuantityString(R.plurals.photos_format, photos.size,
+              photos.size)
+    } else {
+      getString(R.string.collage)
+    }
   }
 
   private fun actionAdd() {
-    println("actionAdd")
+    val addPhotoBottomDialogFragment =
+            PhotosBottomDialogFragment.newInstance()
+    addPhotoBottomDialogFragment
+            .show(supportFragmentManager, "PhotosBottomDialogFragment")
+    viewModel.subscribeSelectedPhotos(
+            addPhotoBottomDialogFragment.selectedPhotos)
+
   }
 
   private fun actionClear() {
-    println("actionClear")
+    viewModel.clearPhotos()
   }
 
   private fun actionSave() {
-    println("actionSave")
+    viewModel.saveBitmapFromImageView(collageImage, this)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeBy(
+                    onSuccess = { file ->
+                      Toast.makeText(this, "$file saved",
+                              Toast.LENGTH_SHORT).show()
+                    },
+                    onError = { e ->
+                      Toast.makeText(this,
+                              "Error saving file :${e.localizedMessage}",
+                              Toast.LENGTH_SHORT).show()
+                    }
+            )
   }
-}
+  }
+

@@ -36,6 +36,13 @@ import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
 import android.util.Log
 import android.widget.ImageView
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import io.reactivex.Observable
+import io.reactivex.Single
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.rxkotlin.addTo
+import io.reactivex.subjects.BehaviorSubject
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -44,26 +51,77 @@ import java.io.OutputStream
 
 class SharedViewModel : ViewModel() {
 
-  fun saveBitmapFromImageView(imageView: ImageView, context: Context) {
-    val tmpImg = "${System.currentTimeMillis()}.png"
+  private val disposables = CompositeDisposable()
 
-    val os: OutputStream?
+  //Данный subject будет содержать все изображения, а выпускать он будет список этих изображений
+  private val imagesSubject: BehaviorSubject<MutableList<Photo>>
+          = BehaviorSubject.createDefault<MutableList<Photo>>(mutableListOf())
+  private val selectedPhotos = MutableLiveData<List<Photo>>()
 
-    val collagesDirectory = File(context.getExternalFilesDir(null), "collages")
-    if (!collagesDirectory.exists()) {
-      collagesDirectory.mkdirs()
-    }
+  //Перегон всех изображений в LiveData
+  init {
+    imagesSubject.subscribe { photos ->
+      selectedPhotos.value = photos
+    }.addTo(disposables)
+  }
+  fun getSelectedPhotos(): LiveData<List<Photo>> {
+    return selectedPhotos
+  }
 
-    val file = File(collagesDirectory, tmpImg)
+  //Данный метод вызовется когда ViewModel больше не используется и передаётся системе на уничтожение
+  override fun onCleared() {
+    disposables.dispose()
+    super.onCleared()
+  }
 
-    try {
-      os = FileOutputStream(file)
-      val bitmap = (imageView.drawable as BitmapDrawable).bitmap
-      bitmap.compress(Bitmap.CompressFormat.PNG, 100, os)
-      os.flush()
-      os.close()
-    } catch(e: IOException) {
-      Log.e("MainActivity", "Problem saving collage", e)
+  fun saveBitmapFromImageView(imageView: ImageView, context: Context):
+          Single<String> {
+    return Single.create { emitter ->
+      val tmpImg = "${System.currentTimeMillis()}.png"
+      val os: OutputStream?
+      val collagesDirectory =
+              File(context.getExternalFilesDir(null), "collages")
+      if (!collagesDirectory.exists()) {
+        collagesDirectory.mkdirs()
+      }
+      val file = File(collagesDirectory, tmpImg)
+      try {
+        os = FileOutputStream(file)
+        val bitmap = (imageView.drawable as BitmapDrawable).bitmap
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, os)
+        os.flush()
+        os.close()
+        emitter.onSuccess(tmpImg)
+      } catch(e: IOException) {
+        Log.e("MainActivity", "Problem saving collage", e)
+        emitter.onError(e)
+      }
     }
   }
+
+  //Метод добавления фото в Subject и впоследствие в LiveData т.к мы отслеживаем изменения в Subject
+  fun addPhoto(photo: Photo) {
+    imagesSubject.value?.add(photo)
+    imagesSubject.onNext(imagesSubject.value!!)
+  }
+
+  //Метод очистки Subject и впоследствие LiveData т.к мы отслеживаем изменения в Subject
+  fun clearPhotos() {
+    imagesSubject.value?.clear()
+    imagesSubject.onNext(imagesSubject.value!!)
+  }
+
+  //Вспомогательный метод по отправке выбранных фото в imageSubject
+  fun subscribeSelectedPhotos(selectedPhotos: Observable<Photo>) {
+    selectedPhotos
+            .doOnComplete {
+              Log.v("SharedViewModel", "Completed selecting photos")
+            }
+            .subscribe { photo ->
+              imagesSubject.value?.add(photo)
+              imagesSubject.onNext(imagesSubject.value!!)
+            }
+            .addTo(disposables)
+  }
+
 }
