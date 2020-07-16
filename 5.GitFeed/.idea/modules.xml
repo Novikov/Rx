@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/5.GitFeed.iml" filepath="$PROJECT_DIR$/.idea/modules/5.GitFeed.iml" group="5.GitFeed" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="5.GitFeed/app" />
+    </modules>
+  </component>
+</project>
