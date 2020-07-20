@@ -30,7 +30,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/kotlin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../6.Combining" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -68,6 +68,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="743" y="289" width="424" height="491" key="FileChooserDialogImpl" timestamp="1595219292950">
+      <screen x="0" y="27" width="1920" height="1009" />
+    </state>
+    <state x="743" y="289" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1009@0.27.1920.1009" timestamp="1595219292950" />
     <state width="1874" height="261" key="GridCell.Tab.0.bottom" timestamp="1594034537660">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
