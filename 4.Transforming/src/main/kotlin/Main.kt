@@ -67,10 +67,18 @@ fun main(args: Array<String>) {
 
     exampleOf("switchMap") {
         val observable = Observable
-                .just("A", "B", "C")
+                .just("A", "B", "C","D","E")
                 .switchMap { s: String ->
-                    Observable.just(s + "1", s + "2", s + "3").delay(1, TimeUnit.MILLISECONDS)
+                    Observable.just(s + "1", s + "2", s + "3").delay(1, TimeUnit.MICROSECONDS)
                 }
+
+        observable.subscribe { s: String -> print("$s ") }
+    }
+
+    exampleOf("debounce") {
+        val observable = Observable
+            .just("A", "B", "C","D","E")
+            .debounce(1,TimeUnit.SECONDS)
 
         observable.subscribe { s: String -> print("$s ") }
     }
